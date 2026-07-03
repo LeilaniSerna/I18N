@@ -1,0 +1,105 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-header">
+    <ion-title>
+      {{ 'HOME.TITLE' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding custom-background">
+  <div class="content-container">
+    <!-- Main Card -->
+    <ion-card class="glass-card">
+      <ion-card-header>
+        <ion-card-subtitle class="card-subtitle">
+          {{ 'HOME.SUBTITLE' | translate }}
+        </ion-card-subtitle>
+        <ion-card-title class="card-title">
+          {{ 'HOME.TITLE' | translate }}
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p class="description-text">
+          {{ 'HOME.DESCRIPTION' | translate }}
+        </p>
+
+        <!-- Language Switcher Section -->
+        <div class="selector-container">
+          <ion-item lines="none" class="selector-item">
+            <ion-label position="stacked">
+              {{ 'HOME.LANG_SELECTOR_LABEL' | translate }}
+            </ion-label>
+            <ion-select 
+              [value]="currentLang" 
+              (ionChange)="changeLanguage($event)" 
+              interface="popover"
+              class="custom-select"
+            >
+              @for (lang of availableLanguages; track lang.code) {
+                <ion-select-option [value]="lang.code">
+                  {{ lang.label | translate }}
+                </ion-select-option>
+              }
+            </ion-select>
+          </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Key Features Card -->
+    <ion-card class="glass-card ion-margin-top">
+      <ion-card-header>
+        <ion-card-title class="features-title">
+          {{ 'HOME.FEATURES_TITLE' | translate }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="no-padding">
+        <ion-list lines="full" class="transparent-list">
+          @for (feature of features; track feature; let i = $index) {
+            <ion-item class="feature-item">
+              <div class="index-badge" slot="start">{{ i + 1 }}</div>
+              <ion-label class="ion-text-wrap feature-label">
+                {{ feature | translate }}
+              </ion-label>
+            </ion-item>
+          }
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Dynamic Actions Section -->
+    <div class="button-section ion-margin-top">
+      <ion-button expand="block" fill="outline" class="info-toggle-btn" (click)="toggleExtraInfo()">
+        {{ 'HOME.BUTTON_INFO' | translate }}
+      </ion-button>
+
+      <!-- Conditional block demonstrating Angular's new @if syntax -->
+      @if (showExtraInfo) {
+        <div class="info-alert-box animate-fade-in">
+          <div class="alert-header">
+            <h4>{{ 'HOME.INFO_ALERT_TITLE' | translate }}</h4>
+          </div>
+          <p>{{ 'HOME.INFO_ALERT_MESSAGE' | translate }}</p>
+        </div>
+      }
+
+      <div class="action-buttons-row">
+        <ion-button expand="block" color="primary" class="action-btn">
+          {{ 'HOME.BUTTON_ACCEPT' | translate }}
+        </ion-button>
+        <ion-button expand="block" fill="clear" color="medium" class="action-btn">
+          {{ 'HOME.BUTTON_CANCEL' | translate }}
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="custom-footer ion-no-border">
+  <ion-toolbar>
+    <ion-title size="small" class="ion-text-center footer-text">
+      {{ 'HOME.FOOTER_TEXT' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

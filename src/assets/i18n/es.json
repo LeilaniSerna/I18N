@@ -1,0 +1,23 @@
+{
+  "HOME": {
+    "TITLE": "Internacionalización Dinámica",
+    "SUBTITLE": "Frameworks para el Desarrollo de Software",
+    "DESCRIPTION": "Esta práctica de laboratorio demuestra la implementación de i18n dinámica en tiempo real utilizando componentes Standalone de Angular 18/19 y la nueva sintaxis de control de flujo.",
+    "FEATURES_TITLE": "Características Clave del Proyecto",
+    "FEATURE_JSON": "Carga asíncrona de recursos mediante archivos de idioma JSON independientes.",
+    "FEATURE_STANDALONE": "Uso estricto de Componentes Standalone (cero módulos heredados).",
+    "FEATURE_FLOW": "Control de flujo estructurado con las nuevas directivas integradas @if y @for.",
+    "FEATURE_DYNAMIC": "Cambio reactivo de idioma en tiempo real sin recargar la aplicación.",
+    "LANG_SELECTOR_LABEL": "Idioma actual",
+    "BUTTON_ACCEPT": "Aceptar",
+    "BUTTON_CANCEL": "Cancelar",
+    "BUTTON_INFO": "Más Información",
+    "INFO_ALERT_TITLE": "Internacionalización (i18n)",
+    "INFO_ALERT_MESSAGE": "El idioma de la aplicación ha sido cambiado dinámicamente sin recargar la página. ¡Los diccionarios JSON cargados asíncronamente funcionan correctamente!",
+    "FOOTER_TEXT": "Materia: Frameworks para el Desarrollo de Software • Práctica de Laboratorio"
+  },
+  "LANGUAGES": {
+    "ES": "Español (ES)",
+    "EN": "Inglés (EN)"
+  }
+}

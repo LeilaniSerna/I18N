@@ -1,0 +1,7 @@
+{
+  "name": "i18n-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
